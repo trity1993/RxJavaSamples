@@ -19,6 +19,7 @@
     <string name="title_token_advanced">Token_高级(retryWhen)</string>
     <string name="invalidate_token">销毁 token</string>
     <string name="title_cache">缓存(BehaviorSubject)</string>
+    <string name="title_throttleFirst">防抖动(throttleFirst)</string>
     <string name="loading_time_and_source">耗时：%1$sms(从%2$s)</string>
     <string name="data_source_memory">内存</string>
     <string name="data_source_disk">磁盘</string>

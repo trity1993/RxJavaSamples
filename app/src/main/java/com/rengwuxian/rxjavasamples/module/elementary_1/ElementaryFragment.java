@@ -29,6 +29,9 @@ import rx.Observer;
 import rx.android.schedulers.AndroidSchedulers;
 import rx.schedulers.Schedulers;
 
+/**
+ * 基本使用
+ */
 public class ElementaryFragment extends BaseFragment {
     @Bind(R.id.swipeRefreshLayout) SwipeRefreshLayout swipeRefreshLayout;
     @Bind(R.id.gridRv) RecyclerView gridRv;
@@ -37,8 +40,8 @@ public class ElementaryFragment extends BaseFragment {
     Observer<List<ZhuangbiImage>> observer = new Observer<List<ZhuangbiImage>>() {
         @Override
         public void onCompleted() {
-        }
 
+        }
         @Override
         public void onError(Throwable e) {
             swipeRefreshLayout.setRefreshing(false);
@@ -85,12 +88,12 @@ public class ElementaryFragment extends BaseFragment {
     }
 
     @Override
-    protected int getDialogRes() {
-        return R.layout.dialog_elementary;
+    protected int getTitleRes() {
+        return R.string.title_elementary;
     }
 
     @Override
-    protected int getTitleRes() {
-        return R.string.title_elementary;
+    protected int getDialogRes() {
+        return R.layout.dialog_elementary;
     }
 }

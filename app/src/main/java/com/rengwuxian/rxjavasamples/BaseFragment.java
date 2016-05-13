@@ -9,10 +9,11 @@ import butterknife.OnClick;
 import rx.Subscription;
 
 public abstract class BaseFragment extends Fragment {
+    protected final String TAG=getClass().getSimpleName();
     protected Subscription subscription;
 
     @OnClick(R.id.tipBt)
-    void tip() {
+    public void tip() {
         new AlertDialog.Builder(getActivity())
                 .setTitle(getTitleRes())
                 .setView(getActivity().getLayoutInflater().inflate(getDialogRes(), null))
