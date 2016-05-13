@@ -58,18 +58,18 @@ public class NotMoreClickFragment extends BaseFragment {
     }
 
     @Override
-    protected int getDialogRes() {
-        return 0;
-    }
-
-    @Override
     protected int getTitleRes() {
-        return 0;
+        return R.string.title_throttleFirst;
     }
 
     @Override
     public void onDestroyView() {
         super.onDestroyView();
         ButterKnife.unbind(this);
+    }
+
+    @Override
+    protected int getContentRes() {
+        return R.string.dialog_throttle_first;
     }
 }

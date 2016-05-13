@@ -5,12 +5,12 @@
     <include layout="@layout/tip_bt" />
     <Button
         android:id="@+id/btn_click"
-        android:text="click"
+        android:text="仿造RxBinding使用throttleFirst进行实现"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
     <Button
         android:id="@+id/btn_click_utils"
-        android:text="click"
+        android:text="使用synchronized实现"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
 </LinearLayout>

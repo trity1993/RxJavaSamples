@@ -88,12 +88,13 @@ public class ElementaryFragment extends BaseFragment {
     }
 
     @Override
+    protected int getContentRes() {
+        return R.string.dialog_elementary;
+    }
+
+    @Override
     protected int getTitleRes() {
         return R.string.title_elementary;
     }
 
-    @Override
-    protected int getDialogRes() {
-        return R.layout.dialog_elementary;
-    }
 }

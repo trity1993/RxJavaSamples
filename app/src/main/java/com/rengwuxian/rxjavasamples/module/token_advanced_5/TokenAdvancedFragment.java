@@ -110,8 +110,8 @@ public class TokenAdvancedFragment extends BaseFragment {
     }
 
     @Override
-    protected int getDialogRes() {
-        return R.layout.dialog_token_advanced;
+    protected int getContentRes() {
+        return R.string.dialog_token_advanced;
     }
 
     @Override

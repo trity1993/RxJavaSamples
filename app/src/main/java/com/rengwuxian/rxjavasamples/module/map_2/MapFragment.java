@@ -100,8 +100,8 @@ public class MapFragment extends BaseFragment {
     }
 
     @Override
-    protected int getDialogRes() {
-        return R.layout.dialog_map;
+    protected int getContentRes() {
+        return R.string.dialog_map;
     }
 
     @Override

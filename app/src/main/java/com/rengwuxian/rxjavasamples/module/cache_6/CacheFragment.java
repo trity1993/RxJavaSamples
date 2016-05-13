@@ -89,8 +89,8 @@ public class CacheFragment extends BaseFragment {
     }
 
     @Override
-    protected int getDialogRes() {
-        return R.layout.dialog_cache;
+    protected int getContentRes() {
+        return R.string.dialog_cache;
     }
 
     @Override

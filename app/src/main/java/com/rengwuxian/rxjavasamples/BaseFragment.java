@@ -14,10 +14,11 @@ public abstract class BaseFragment extends Fragment {
 
     @OnClick(R.id.tipBt)
     public void tip() {
-        new AlertDialog.Builder(getActivity())
+        AlertDialog dialog=new AlertDialog.Builder(getActivity())
                 .setTitle(getTitleRes())
-                .setView(getActivity().getLayoutInflater().inflate(getDialogRes(), null))
-                .show();
+                .setMessage(getContentRes())
+                .create();
+        dialog.show();
     }
 
     @Override
@@ -32,7 +33,7 @@ public abstract class BaseFragment extends Fragment {
         }
     }
 
-    protected abstract int getDialogRes();
+    protected abstract int getContentRes();
 
     protected abstract int getTitleRes();
 }

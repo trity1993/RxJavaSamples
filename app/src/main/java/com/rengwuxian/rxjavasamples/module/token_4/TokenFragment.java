@@ -73,8 +73,8 @@ public class TokenFragment extends BaseFragment {
     }
 
     @Override
-    protected int getDialogRes() {
-        return R.layout.dialog_token;
+    protected int getContentRes() {
+        return R.string.dialog_token;
     }
 
     @Override
