@@ -30,6 +30,7 @@ import butterknife.OnClick;
 import rx.Observable;
 import rx.Observer;
 import rx.android.schedulers.AndroidSchedulers;
+import rx.functions.Action1;
 import rx.functions.Func2;
 import rx.schedulers.Schedulers;
 

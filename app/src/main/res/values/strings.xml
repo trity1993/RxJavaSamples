@@ -21,6 +21,7 @@
     <string name="title_cache">缓存(BehaviorSubject)</string>
     <string name="title_throttleFirst">防抖动(throttleFirst)</string>
     <string name="title_debounce">关键字搜索(debounce)</string>
+    <string name="title_buffer">统计次数(buffer)</string>
     <string name="loading_time_and_source">耗时：%1$sms(从%2$s)</string>
     <string name="data_source_memory">内存</string>
     <string name="data_source_disk">磁盘</string>
@@ -31,7 +32,9 @@
     <string name="dialog_zip">有的时候，app 中会需要同时访问不同接口，然后将结果糅合后转为统一的格式后输出（例如将第三方广告 API 的广告夹杂进自家平台返回的数据 List 中）。这种并行的异步处理比较麻烦，不过用了 zip() 之后就会简单得多。代码大致形式：\n\n<b>Observable.zip(api.getData(),\n&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;adApi.getAds(), zipFunc())</b>\n&#160;&#160;&#160;&#160;.subscribeOn(Schedulers.io())\n&#160;&#160;&#160;&#160;.observeOn(AndroidSchedulers.mainThread())\n&#160;&#160;&#160;&#160;.subscribe(observer);\n\n(详见本项目源码)\n\n* 本页 Sample 使用的 API 来自 <b>装逼大全</b> zhuangbi.info 和 <b>干货集中营</b> gank.io</string>
     <string name="dialog_token">出于安全性、性能等方面的考虑，多数服务器会有一些接口需要传入 token 才能正确返回结果，而 token 是需要从另一个接口获取的，这就需要使用两步连续的请求才能获取数据（①token -> ②目标数据）。使用 flatMap() 可以用较为清晰的代码实现这种连续请求，避免 Callback 嵌套的结构。代码大致形式：\n\napi<b>.getToken()\n&#160;&#160;&#160;&#160;.flatMap(token -> api.getData(token))</b>\n&#160;&#160;&#160;&#160;.subscribeOn(Schedulers.io())\n&#160;&#160;&#160;&#160;.observeOn(AndroidSchedulers.mainThread())\n&#160;&#160;&#160;&#160;.subscribe(observer);\n\n(详见本项目源码)\n\n* 由于找不到足够简单的用于示例的 token API，本页 Sample 使用的 API 是<b>我用代码伪造的</b></string>
     <string name="dialog_throttle_first"><b>[Android] 防止连续点击打开两个重复页面的小技巧</b>,来源：<a>http://www.jianshu.com/p/dc63a4b636fa</a>\n\n这里使用两种方式：\n第一种：仿造RxBinding.\n第二种：使用synchronize的方式设置true进行判断。</string>
-    <string name="dialog_debounce"><b>[Android] 关键字搜索频率的控制</b>,来源：<a>http://www.jianshu.com/p/33c548bce571</a>\n\n这里使用两种情景：\n第一种：使用debounce+switchMap来控制关键字输入查询的频率+switchmap取消上一次未返回的请求.\n第二种：加入retryWhen的重试机制，使用二进制指数退避算法，进行延长每次失败后再次请求的时间。</string>
+    <string name="dialog_debounce"><b>关键字搜索频率的控制</b>,来源：<a>http://www.jianshu.com/p/33c548bce571</a>\n\n这里使用两种情景：\n第一种：使用debounce+switchMap来控制关键字输入查询的频率+switchmap取消上一次未返回的请求.\n第二种：加入retryWhen的重试机制，使用二进制指数退避算法，进行延长每次失败后再次请求的时间。</string>
+    <string name="dialog_buffer"><b>Buffer操作符使用</b>,发现：不结合RxBinding的话，很多效果比较难实现，Buffer(time)没实现\n\n这里使用两种情景：\n第一种：
+        统计规定时间内，相应的数量。如：时间内，点击的次数，摇一摇的次数等.\n第二种：分发：对数组的数据进行切割并分发，适当跳过一些指定的数据\n\n最后是Window操作符跟Buffer相似\n\n区别在于Window为Observable缓存，而Buffer为list</string>
     <string name="api_source_rengwuxian">* 由于找不到足够简单的用于示例的 token API，本页 Sample 使用的 API 是<b>我用代码伪造的</b></string>
     <string name="got_data">获取到的数据：\nID：%1$d\n用户名：%2$s</string>
     <string name="got_token_and_data">token:%1$s\n\n获取到的数据：\nID：%2$d\n用户名：%3$s</string>

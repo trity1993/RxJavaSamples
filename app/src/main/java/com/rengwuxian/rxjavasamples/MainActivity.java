@@ -8,6 +8,7 @@ import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 
+import com.rengwuxian.rxjavasamples.module.buffer_9.BufferFragment;
 import com.rengwuxian.rxjavasamples.module.key_search_8.SearchKeyFragment;
 import com.rengwuxian.rxjavasamples.module.not_more_click_7.NotMoreClickFragment;
 import com.rengwuxian.rxjavasamples.module.token_advanced_5.TokenAdvancedFragment;
@@ -36,7 +37,7 @@ public class MainActivity extends AppCompatActivity {
         viewPager.setAdapter(new FragmentPagerAdapter(getFragmentManager()) {
             @Override
             public int getCount() {
-                return 8;
+                return 9;
             }
 
             @Override
@@ -58,6 +59,8 @@ public class MainActivity extends AppCompatActivity {
                         return new NotMoreClickFragment();
                     case 7:
                         return new SearchKeyFragment();
+                    case 8:
+                        return new BufferFragment();
                     default:
                         return new ElementaryFragment();
                 }
@@ -82,6 +85,8 @@ public class MainActivity extends AppCompatActivity {
                         return getString(R.string.title_throttleFirst);
                     case 7:
                         return getString(R.string.title_debounce);
+                    case 8:
+                        return getString(R.string.title_buffer);
                     default:
                         return getString(R.string.title_elementary);
                 }
