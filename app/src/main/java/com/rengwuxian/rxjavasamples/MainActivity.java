@@ -10,6 +10,7 @@ import android.support.v7.widget.Toolbar;
 
 import com.rengwuxian.rxjavasamples.module.buffer_9.BufferFragment;
 import com.rengwuxian.rxjavasamples.module.key_search_8.SearchKeyFragment;
+import com.rengwuxian.rxjavasamples.module.merge_10.MergeFragment;
 import com.rengwuxian.rxjavasamples.module.not_more_click_7.NotMoreClickFragment;
 import com.rengwuxian.rxjavasamples.module.token_advanced_5.TokenAdvancedFragment;
 import com.rengwuxian.rxjavasamples.module.token_4.TokenFragment;
@@ -61,6 +62,8 @@ public class MainActivity extends AppCompatActivity {
                         return new SearchKeyFragment();
                     case 8:
                         return new BufferFragment();
+                    case 9:
+                        return new MergeFragment();
                     default:
                         return new ElementaryFragment();
                 }
@@ -87,6 +90,8 @@ public class MainActivity extends AppCompatActivity {
                         return getString(R.string.title_debounce);
                     case 8:
                         return getString(R.string.title_buffer);
+                    case 9:
+                        return getString(R.string.title_merge);
                     default:
                         return getString(R.string.title_elementary);
                 }
