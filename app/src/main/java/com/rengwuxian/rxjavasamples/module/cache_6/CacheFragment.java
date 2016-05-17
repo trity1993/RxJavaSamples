@@ -27,6 +27,9 @@ import butterknife.ButterKnife;
 import butterknife.OnClick;
 import rx.Observer;
 
+/**
+ * 使用BehaviorSubject作为内存缓存
+ */
 public class CacheFragment extends BaseFragment {
     @Bind(R.id.loadingTimeTv) TextView loadingTimeTv;
     @Bind(R.id.swipeRefreshLayout) SwipeRefreshLayout swipeRefreshLayout;

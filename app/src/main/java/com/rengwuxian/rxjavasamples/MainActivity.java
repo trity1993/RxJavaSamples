@@ -13,6 +13,7 @@ import com.rengwuxian.rxjavasamples.module.interval_11.IntervalFragment;
 import com.rengwuxian.rxjavasamples.module.key_search_8.SearchKeyFragment;
 import com.rengwuxian.rxjavasamples.module.merge_10.MergeFragment;
 import com.rengwuxian.rxjavasamples.module.not_more_click_7.NotMoreClickFragment;
+import com.rengwuxian.rxjavasamples.module.subject_12.SubjectDemoFragment;
 import com.rengwuxian.rxjavasamples.module.token_advanced_5.TokenAdvancedFragment;
 import com.rengwuxian.rxjavasamples.module.token_4.TokenFragment;
 import com.rengwuxian.rxjavasamples.module.cache_6.CacheFragment;
@@ -39,7 +40,7 @@ public class MainActivity extends AppCompatActivity {
         viewPager.setAdapter(new FragmentPagerAdapter(getFragmentManager()) {
             @Override
             public int getCount() {
-                return 11;
+                return 12;
             }
 
             @Override
@@ -67,6 +68,8 @@ public class MainActivity extends AppCompatActivity {
                         return new MergeFragment();
                     case 10:
                         return new IntervalFragment();
+                    case 11:
+                        return new SubjectDemoFragment();
                     default:
                         return new ElementaryFragment();
                 }
@@ -97,6 +100,8 @@ public class MainActivity extends AppCompatActivity {
                         return getString(R.string.title_merge);
                     case 10:
                         return getString(R.string.title_interval);
+                    case 11:
+                        return getString(R.string.title_subject);
                     default:
                         return getString(R.string.title_elementary);
                 }

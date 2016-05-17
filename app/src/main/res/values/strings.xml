@@ -19,6 +19,7 @@
     <string name="title_token_advanced">Token_高级(retryWhen)</string>
     <string name="invalidate_token">销毁 token</string>
     <string name="title_cache">缓存(BehaviorSubject)</string>
+    <string name="title_subject">观察者—观察对象(Subject)</string>
     <string name="title_throttleFirst">防抖动(throttleFirst)</string>
     <string name="title_debounce">关键字搜索(debounce)</string>
     <string name="title_buffer">统计次数(buffer)</string>
@@ -63,5 +64,11 @@
     <string name="memory_cache_cleared">内存缓存已清空</string>
     <string name="memory_and_disk_cache_cleared">内存缓存和磁盘缓存都已清空</string>
     <string name="dialog_cache">RxJava 中有一个较少被人用到的类叫做 Subject，它是一种『既是 Observable，又是 Observer』的东西，因此可以被用作中间件来做数据传递。例如，可以用它的子类 BehaviorSubject 来制作缓存。代码大致形式：\n\napi.getData()\n&#160;&#160;&#160;&#160;.subscribe(<b>behaviorSubject</b>); // 网络数据会被缓存\n\n<b>behaviorSubject.subscribe(observer);</b> // 之前的缓存将直接送达 observer\n\n(详见本项目源码)\n\n * 本页 Sample 使用的 API 来自 <b>干货集中营</b> gank.io</string>
+    <string name="dialog_subject">RxJava 中有一个较少被人用到的类叫做 Subject，它是一种『既是 Observable，又是 Observer』的东西，因此可以被用作中间件来做数据传递。
+        \n 详情参考：<a>http://www.jianshu.com/p/1257c8ba7c0c#</a>
+        \n 例如，可以用它的子类 BehaviorSubject 来制作缓存。
+        \n 子类 PublishSubject可自定义发送消息onNext发送，onCompleted结束订阅。另外订阅者送什么地方订阅，就从次数开始接受订阅消息.这里需要注意跟AsyncSubject，BehaviorSubject的差别
+        \n 子类 SerializedSubject实现RxBus
+    </string>
 
 </resources>
