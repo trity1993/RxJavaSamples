@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <include layout="@layout/tip_bt" />
+
+    <TextView
+        android:id="@+id/tv_show"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <Button
+        android:id="@+id/btn_rx_interval"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="btn_rx_interval" />
+
+    <Button
+        android:id="@+id/btn_rx_timer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="btn_rx_timer" />
+
+    <Button
+        android:id="@+id/btn_timer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="btn_timer" />
+
+    <Button
+        android:id="@+id/btn_ScheduledThreadPoolExecutor"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="btn_ScheduledThreadPoolExecutor" />
+
+    <Button
+        android:id="@+id/btn_close"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="close all 定时器" />
+</LinearLayout>

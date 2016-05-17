@@ -9,6 +9,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 
 import com.rengwuxian.rxjavasamples.module.buffer_9.BufferFragment;
+import com.rengwuxian.rxjavasamples.module.interval_11.IntervalFragment;
 import com.rengwuxian.rxjavasamples.module.key_search_8.SearchKeyFragment;
 import com.rengwuxian.rxjavasamples.module.merge_10.MergeFragment;
 import com.rengwuxian.rxjavasamples.module.not_more_click_7.NotMoreClickFragment;
@@ -38,7 +39,7 @@ public class MainActivity extends AppCompatActivity {
         viewPager.setAdapter(new FragmentPagerAdapter(getFragmentManager()) {
             @Override
             public int getCount() {
-                return 9;
+                return 11;
             }
 
             @Override
@@ -64,6 +65,8 @@ public class MainActivity extends AppCompatActivity {
                         return new BufferFragment();
                     case 9:
                         return new MergeFragment();
+                    case 10:
+                        return new IntervalFragment();
                     default:
                         return new ElementaryFragment();
                 }
@@ -92,6 +95,8 @@ public class MainActivity extends AppCompatActivity {
                         return getString(R.string.title_buffer);
                     case 9:
                         return getString(R.string.title_merge);
+                    case 10:
+                        return getString(R.string.title_interval);
                     default:
                         return getString(R.string.title_elementary);
                 }

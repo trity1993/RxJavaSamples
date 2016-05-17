@@ -23,6 +23,7 @@
     <string name="title_debounce">关键字搜索(debounce)</string>
     <string name="title_buffer">统计次数(buffer)</string>
     <string name="title_merge">合并请求数据操作(merge)</string>
+    <string name="title_interval">定时器操作(interval)</string>
     <string name="loading_time_and_source">耗时：%1$sms(从%2$s)</string>
     <string name="data_source_memory">内存</string>
     <string name="data_source_disk">磁盘</string>
@@ -40,6 +41,13 @@
         \n 对比zip
         \n 发现zip比较灵活，及时得到的容器list不同，但提供方法转换成相同
         \n 而concat和merge做不到，所获得的容器一定相同
+    </string>
+    <string name="dialog_interval">
+        <b>定时器操作(interval)</b>
+        \n\n定时器的操作,与timer相比,几乎相同,但在后续的版本中，timer不推荐使用了.
+        \n 使用interval来代替传统java中使用的timer和ScheduledThreadPoolExecutor的操作
+        \n 用途：定时器，轮询操作等。
+        \n 从例子中看到，使用传统java还得切换到UI线程进行执行UI改变操作，而Rx很容易进行切换
     </string>
     <string name="dialog_buffer"><b>Buffer操作符使用</b>,发现：不结合RxBinding的话，很多效果比较难实现，Buffer(time)没实现\n\n这里使用两种情景：\n第一种：
         统计规定时间内，相应的数量。如：时间内，点击的次数，摇一摇的次数等.\n第二种：分发：对数组的数据进行切割并分发，适当跳过一些指定的数据\n\n最后是Window操作符跟Buffer相似\n\n区别在于Window为Observable缓存，而Buffer为list</string>
