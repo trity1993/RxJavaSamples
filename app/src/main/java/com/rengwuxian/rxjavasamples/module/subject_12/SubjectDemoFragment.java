@@ -16,6 +16,7 @@ import rx.subjects.PublishSubject;
  * Created by trity on 17/5/16.
  */
 public class SubjectDemoFragment extends BaseFragment {
+    public static final String RX_BUS="Rx_BUS";
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -32,8 +33,12 @@ public class SubjectDemoFragment extends BaseFragment {
         PublishSubject<String> publishSubject=PublishSubject.create();
 //        publishSubject.onCompleted();//如果执行这个的话，将接受不到任何订阅消息
         getActivity().getFragmentManager().beginTransaction()
-                .replace(R.id.fl_publish_left,PublishLeftFragment.newInstance(publishSubject))
-                .replace(R.id.fl_publish_right,PublishRightFragment.newInstance(publishSubject))
+                .replace(R.id.fl_publish_left,PublishLeftFragment.newInstance(publishSubject,false))
+                .replace(R.id.fl_publish_right,PublishRightFragment.newInstance(publishSubject,false))
+                .commit();
+        getActivity().getFragmentManager().beginTransaction()
+                .replace(R.id.fl_rxbus_left,PublishLeftFragment.newInstance(publishSubject,true))
+                .replace(R.id.fl_rxbus_right,PublishRightFragment.newInstance(publishSubject,true))
                 .commit();
     }
 
@@ -45,5 +50,8 @@ public class SubjectDemoFragment extends BaseFragment {
     @Override
     protected int getTitleRes() {
         return R.string.title_subject;
+    }
+
+    public static class TapEvent {
     }
 }

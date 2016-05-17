@@ -9,6 +9,7 @@ import android.view.ViewGroup;
 import android.widget.Button;
 
 import com.rengwuxian.rxjavasamples.R;
+import com.rengwuxian.rxjavasamples.module.rxbus_13.RxBus;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;
@@ -22,15 +23,24 @@ public class PublishLeftFragment extends Fragment {
     public PublishSubject<String> publishSubject;
     @Bind(R.id.button)
     Button button;
+    boolean isRxbus;
 
-    public static PublishLeftFragment newInstance(PublishSubject<String> publishSubject) {
+    public static PublishLeftFragment newInstance(PublishSubject<String> publishSubject,boolean isRxbus) {
 
         Bundle args = new Bundle();
+        args.putBoolean(SubjectDemoFragment.RX_BUS,isRxbus);
 
         PublishLeftFragment fragment = new PublishLeftFragment();
         fragment.publishSubject = publishSubject;
         fragment.setArguments(args);
         return fragment;
+    }
+
+    @Override
+    public void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        Bundle bundle=getArguments();
+        isRxbus=bundle.getBoolean(SubjectDemoFragment.RX_BUS);
     }
 
     @Nullable
@@ -44,7 +54,13 @@ public class PublishLeftFragment extends Fragment {
 
     @OnClick(R.id.button)
     void onClick(View view) {
-        publishSubject.onNext(button.getText().toString());
+        if(isRxbus){
+            if(RxBus.hasObservers()){
+                RxBus.send(new SubjectDemoFragment.TapEvent());
+            }
+        }else{
+            publishSubject.onNext(button.getText().toString());
+        }
     }
 
     @Override

@@ -7,8 +7,10 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.rengwuxian.rxjavasamples.R;
+import com.rengwuxian.rxjavasamples.module.rxbus_13.RxBus;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;
@@ -22,16 +24,24 @@ public class PublishRightFragment extends Fragment {
     @Bind(R.id.textView2)
     TextView textView2;
     public PublishSubject<String> publishSubject;
+    boolean isRxbus;
 
 
-    public static PublishRightFragment newInstance(PublishSubject<String> publishSubject) {
+    public static PublishRightFragment newInstance(PublishSubject<String> publishSubject,boolean isRxbus) {
 
         Bundle args = new Bundle();
+        args.putBoolean(SubjectDemoFragment.RX_BUS,isRxbus);
 
         PublishRightFragment fragment = new PublishRightFragment();
         fragment.publishSubject=publishSubject;
         fragment.setArguments(args);
         return fragment;
+    }
+
+    @Override
+    public void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        isRxbus=getArguments().getBoolean(SubjectDemoFragment.RX_BUS);
     }
 
     @Nullable
@@ -47,6 +57,16 @@ public class PublishRightFragment extends Fragment {
                 textView2.setText(s);
             }
         });
+        if(isRxbus){
+            RxBus.toObserverable().subscribe(new Action1<Object>() {
+                @Override
+                public void call(Object o) {
+                    if(o instanceof SubjectDemoFragment.TapEvent){
+                        Toast.makeText(getActivity(),"rxbus",Toast.LENGTH_SHORT).show();
+                    }
+                }
+            });
+        }
 
         return view;
     }
