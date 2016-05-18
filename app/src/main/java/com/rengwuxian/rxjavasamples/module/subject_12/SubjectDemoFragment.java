@@ -13,6 +13,7 @@ import rx.subjects.PublishSubject;
 
 /**
  * 具体操作：http://www.jianshu.com/p/1257c8ba7c0c#
+ * rxbus的使用：https://drakeet.me/rxbus
  * Created by trity on 17/5/16.
  */
 public class SubjectDemoFragment extends BaseFragment {

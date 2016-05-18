@@ -1,30 +1,29 @@
 package com.rengwuxian.rxjavasamples;
 
+import android.app.Fragment;
 import android.os.Bundle;
 import android.support.design.widget.TabLayout;
-import android.app.Fragment;
 import android.support.v13.app.FragmentPagerAdapter;
 import android.support.v4.view.ViewPager;
-import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 
 import com.rengwuxian.rxjavasamples.module.buffer_9.BufferFragment;
+import com.rengwuxian.rxjavasamples.module.cache_6.CacheFragment;
+import com.rengwuxian.rxjavasamples.module.elementary_1.ElementaryFragment;
 import com.rengwuxian.rxjavasamples.module.interval_11.IntervalFragment;
 import com.rengwuxian.rxjavasamples.module.key_search_8.SearchKeyFragment;
+import com.rengwuxian.rxjavasamples.module.map_2.MapFragment;
 import com.rengwuxian.rxjavasamples.module.merge_10.MergeFragment;
 import com.rengwuxian.rxjavasamples.module.not_more_click_7.NotMoreClickFragment;
 import com.rengwuxian.rxjavasamples.module.subject_12.SubjectDemoFragment;
-import com.rengwuxian.rxjavasamples.module.token_advanced_5.TokenAdvancedFragment;
 import com.rengwuxian.rxjavasamples.module.token_4.TokenFragment;
-import com.rengwuxian.rxjavasamples.module.cache_6.CacheFragment;
+import com.rengwuxian.rxjavasamples.module.token_advanced_5.TokenAdvancedFragment;
 import com.rengwuxian.rxjavasamples.module.zip_3.ZipFragment;
-import com.rengwuxian.rxjavasamples.module.elementary_1.ElementaryFragment;
-import com.rengwuxian.rxjavasamples.module.map_2.MapFragment;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends BaseActivity {
     @Bind(android.R.id.tabs) TabLayout tabLayout;
     @Bind(R.id.viewPager) ViewPager viewPager;
     @Bind(R.id.toolBar) Toolbar toolBar;
