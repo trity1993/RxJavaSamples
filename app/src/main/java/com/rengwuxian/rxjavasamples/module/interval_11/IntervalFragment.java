@@ -22,9 +22,11 @@ import butterknife.ButterKnife;
 import butterknife.OnClick;
 import rx.Observable;
 import rx.android.schedulers.AndroidSchedulers;
+import rx.functions.Action0;
 import rx.functions.Action1;
 
 /**
+ * 定时器的操作
  * Created by trity on 17/5/16.
  */
 public class IntervalFragment extends BaseFragment {
@@ -53,6 +55,9 @@ public class IntervalFragment extends BaseFragment {
         return view;
     }
 
+    /**
+     * interval定时器的操作，立即响应无延迟，3s一个数据
+     */
     public void autoIntervalChanage() {
         unsubscribe();
         subscription = Observable.interval(3, TimeUnit.SECONDS)
@@ -65,15 +70,30 @@ public class IntervalFragment extends BaseFragment {
                 });
     }
 
+    /***
+     * 使用timer将延迟3s后将之前的操作逐个进行响应，最后complete进行结束
+     */
     public void autoRxTimerChanage() {
-        unsubscribe();
+        Log.d(TAG, "autoRxTimerChanage: ");
         subscription = Observable.timer(3, TimeUnit.SECONDS)
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribe(new Action1<Long>() {
                     @Override
                     public void call(Long aLong) {
-                        tvShow.setText(""+(count += aLong));
+                        Log.d(TAG, "autoRxTimerChanage: next");
 
+                        tvShow.setText("" + (count += aLong));
+
+                    }
+                }, new Action1<Throwable>() {
+                    @Override
+                    public void call(Throwable throwable) {
+
+                    }
+                }, new Action0() {
+                    @Override
+                    public void call() {
+                        Log.d(TAG, "RxTimer call: ");
                     }
                 });
     }

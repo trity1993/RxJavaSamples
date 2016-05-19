@@ -46,8 +46,11 @@
     </string>
     <string name="dialog_interval">
         <b>定时器操作(interval)</b>
-        \n\n定时器的操作,与timer相比,几乎相同,但在后续的版本中，timer不推荐使用了.
+        \n\n定时器的操作,与timer相比,timer的功能，interval同样可行,所以在后续的版本中，timer不推荐使用了.
+        \n 案例中rx timer中，3s延迟数据并缓存，3s逐个发射一个，结束一个
         \n 使用interval来代替传统java中使用的timer和ScheduledThreadPoolExecutor的操作
+        \n 使用interval结合take操作：interval(3, TimeUnit.SECONDS).take(5)；
+        \n 表示没3s发送一个数据，5次后自动结束
         \n 用途：定时器，轮询操作等。
         \n 从例子中看到，使用传统java还得切换到UI线程进行执行UI改变操作，而Rx很容易进行切换
     </string>
