@@ -7,6 +7,7 @@ import android.support.v13.app.FragmentPagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.support.v7.widget.Toolbar;
 
+import com.rengwuxian.rxjavasamples.module.CombineLatest_14.CombineLatestFragment;
 import com.rengwuxian.rxjavasamples.module.buffer_9.BufferFragment;
 import com.rengwuxian.rxjavasamples.module.cache_6.CacheFragment;
 import com.rengwuxian.rxjavasamples.module.elementary_1.ElementaryFragment;
@@ -39,7 +40,7 @@ public class MainActivity extends BaseActivity {
         viewPager.setAdapter(new FragmentPagerAdapter(getFragmentManager()) {
             @Override
             public int getCount() {
-                return 12;
+                return 13;
             }
 
             @Override
@@ -69,6 +70,8 @@ public class MainActivity extends BaseActivity {
                         return new IntervalFragment();
                     case 11:
                         return new SubjectDemoFragment();
+                    case 12:
+                        return new CombineLatestFragment();
                     default:
                         return new ElementaryFragment();
                 }
@@ -101,6 +104,8 @@ public class MainActivity extends BaseActivity {
                         return getString(R.string.title_interval);
                     case 11:
                         return getString(R.string.title_subject);
+                    case 12:
+                        return getString(R.string.title_combine_latest);
                     default:
                         return getString(R.string.title_elementary);
                 }
