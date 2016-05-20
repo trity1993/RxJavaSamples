@@ -24,6 +24,7 @@ public class PublishLeftFragment extends Fragment {
     @Bind(R.id.button)
     Button button;
     boolean isRxbus;
+    RxBus rxBus;
 
     public static PublishLeftFragment newInstance(PublishSubject<String> publishSubject,boolean isRxbus) {
 
@@ -41,6 +42,7 @@ public class PublishLeftFragment extends Fragment {
         super.onCreate(savedInstanceState);
         Bundle bundle=getArguments();
         isRxbus=bundle.getBoolean(SubjectDemoFragment.RX_BUS);
+        rxBus=RxBus.getInstance();
     }
 
     @Nullable
@@ -55,8 +57,8 @@ public class PublishLeftFragment extends Fragment {
     @OnClick(R.id.button)
     void onClick(View view) {
         if(isRxbus){
-            if(RxBus.hasObservers()){
-                RxBus.send(new SubjectDemoFragment.TapEvent());
+            if(rxBus.hasObservers()){
+                rxBus.send(new SubjectDemoFragment.TapEvent());
             }
         }else{
             publishSubject.onNext(button.getText().toString());

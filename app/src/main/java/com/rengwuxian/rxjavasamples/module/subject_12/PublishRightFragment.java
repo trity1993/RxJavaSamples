@@ -25,6 +25,7 @@ public class PublishRightFragment extends Fragment {
     TextView textView2;
     public PublishSubject<String> publishSubject;
     boolean isRxbus;
+    RxBus rxBus;
 
 
     public static PublishRightFragment newInstance(PublishSubject<String> publishSubject,boolean isRxbus) {
@@ -42,6 +43,7 @@ public class PublishRightFragment extends Fragment {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         isRxbus=getArguments().getBoolean(SubjectDemoFragment.RX_BUS);
+        rxBus=RxBus.getInstance();
     }
 
     @Nullable
@@ -58,7 +60,7 @@ public class PublishRightFragment extends Fragment {
             }
         });
         if(isRxbus){
-            RxBus.toObserverable().subscribe(new Action1<Object>() {
+            rxBus.toObserverable(SubjectDemoFragment.TapEvent.class).subscribe(new Action1<Object>() {
                 @Override
                 public void call(Object o) {
                     if(o instanceof SubjectDemoFragment.TapEvent){
