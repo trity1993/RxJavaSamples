@@ -15,3 +15,12 @@
 
 最后：希望这个项目能达到[MasteringAndroidDataBinding](https://github.com/LyndonChin/MasteringAndroidDataBinding)的效果。
 
+
+### 2016.5.20
+真是个特殊的日子，通过学习上面demo的源代码以及相关知识的学习中：
+> 发现:`RxBinding，RxLifecycle`的好处，后续会介绍这两个的使用，不过会分开package,并不会更之前的冲突。
+
+后续还会对`rxjava`进行封装。
+
+
+
